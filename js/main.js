@@ -93,12 +93,13 @@ sendPost.addEventListener('click', function() {
 		name:name
 
 	});
+	read_data();
 });
 
 function read_data(){
 	document.getElementById('tekst').innerHTML = "";
 	let raw = firebase.database().ref("messages");
-	raw.on("value", function(snapshot){
+	raw.on("value", function(snapshot){	
 		snapshot.forEach(function (childSnapshot){
 			data = childSnapshot.val();
 			let inhoud = "";
