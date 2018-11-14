@@ -1,0 +1,124 @@
+*{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/***FONTS***/
+@font-face{
+	font-family: 'CRC35';
+	src:url('../fonts/CRC35.otf');
+	src: local('../fonts/CRC35.otf'), url('../fonts/CRC35.otf') format('OpenType');
+}
+
+@font-face{
+	font-family: 'CRC65';
+	src:url('../fonts/CRC65.otf');
+	src: local('../fonts/CRC65.otf'), url('../fonts/CRC65.otf') format('OpenType');
+}
+
+/***ALGEMEEN***/
+
+#loginDiv{
+	width: 20%;
+	margin: 50px auto 0 auto;
+}
+
+h2{
+	color: #131314;
+	font-family: 'CRC65';
+	text-align: center;
+	text-transform: uppercase;
+}
+
+p{
+	font-family: 'CRC35';
+	color: #131314;
+}
+
+input{
+	border: solid 0.5px #131314;
+	width: 100%;
+	font-family: 'CRC35';
+	padding: 5px 0;
+	margin: 15px 0;
+}
+
+#signin, #signup, #logout{
+	font-family: 'CRC65';
+	color: white;
+	width: 100%;
+	background-color: #131314;
+}
+
+#logout{
+	width: 50%;
+	margin-top: 7px;
+}
+
+#logoutDiv{
+	position: fixed;
+	width: 25%;
+	top: 14px;
+	right: 14px;
+	text-align: right;
+}
+
+#signin:hover, #signup:hover, #logout:hover{
+	color: #131314;
+	background-color: white;
+	cursor: pointer;
+}
+
+::placeholder{
+	font-family: 'CRC35';
+	color: grey;
+	padding-left: 5px;
+}
+
+.hide{
+	display: none;
+}
+
+#fouten{
+	text-align: center;
+	color: red;
+}
+
+#blogSection{
+	width: 80%;
+	margin: 100px auto;
+}
+
+#blogPosts{
+	width: 80%;
+	margin: 20px auto;
+}
+
+#title{
+	border-color: #d1d1d1;
+}
+
+#sendPost{
+	background-color: #f8f8f8;
+	border-color: #d1d1d1;
+}
+
+#sendPost:hover{
+	border-color: #f8f8f8;
+	background-color: #d1d1d1;
+	cursor: pointer;
+}
+
+h1{
+	font-family: 'CRC65';
+	color: #131314;
+}
+
+.post{
+	margin: 30px 0;
+}
+
+#post_time{
+	font-size: 9pt;
+}

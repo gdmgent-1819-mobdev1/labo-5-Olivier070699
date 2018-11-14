@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LABO 5</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<section>
+		<div>
+			<div id="loginDiv" class="hide">
+				<h2>Register</h2>
+				<input id="mail" type="email" placeholder="your email" required>
+				<input id="password" type="password" placeholder="password" required>
+				<input id="signin" type="submit" value="sign in">
+				<input id="signup" type="submit" value="sign up">
+				<p id="fouten"></p>
+			</div>
+
+			<div id="logoutDiv">
+				<p class="hide" id="welcome"></p>
+				<input id="logout" class="hide" type="submit" value="logout">		
+			</div>
+		</div>
+	</section>
+
+	<section id="blogSection" class="hide">
+		<input id="title" type="text" placeholder="title" required>
+		<textarea id="editor1" class="ckeditor" name="editor1" required></textarea>
+		<input id="sendPost" type="submit" value="post">
+		<p id="fout_post"></p>
+	</section>
+	<section id="blogPosts">
+		<div id="tekst">
+			
+		</div>	
+	</section>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
