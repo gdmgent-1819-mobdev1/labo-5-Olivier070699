@@ -53,7 +53,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 		loginDiv.classList.add('hide');
 		welcome.classList.remove('hide');
 		welcome.innerHTML =  firebaseUser.email;
-		alert('Welcome ' + firebaseUser.email + '!');
 		blogSection.classList.remove('hide');
 		localStorage.setItem('name', firebaseUser.email);
 	}else{
@@ -82,8 +81,31 @@ let hour = today.getHours();
 let post_time = hour + ':' + min + ", " + dd + '/' + mm + '/' + yyyy;
 
 
+// SAVE CONTENT IN FIREBASS
 sendPost.addEventListener('click', function() {
-	let title = document.getElementById('title');
-	let body = CKEDITOR.instances.editor1.getData();
-	document.getElementById('tekst').innerHTML += "<div class='post'><h1>" + title.value + "</h1><p>" + body + "</p><p id='post_time'>posted at " + post_time + " by "  + name + "</p></div>";	
-})
+	let title = document.getElementById('title').value;
+	let body = CKEDITOR.instances.editor1.getData();	
+	firebase.database().ref("messages").push({
+
+		title:title,
+		body:body,
+		date:post_time,
+		name:name
+
+	});
+});
+
+function read_data(){
+	document.getElementById('tekst').innerHTML = "";
+	let raw = firebase.database().ref("messages");
+	raw.on("value", function(snapshot){
+		snapshot.forEach(function (childSnapshot){
+			data = childSnapshot.val();
+			let inhoud = "";
+			let post_content = "<div class='post'><h1>" + data.title + "</h1><p>" + data.body + "</p><p id='post_time'>posted at " + data.date + " by "  + data.name + "</p></div>";
+			document.getElementById('tekst').insertAdjacentHTML('afterbegin', post_content);
+		})
+	})
+}
+
+read_data();
